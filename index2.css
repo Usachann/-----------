@@ -1,0 +1,35 @@
+.container {
+    display: grid;
+    grid-template-areas: 
+        'header header'
+        'main footer'
+    ;
+
+    grid-gap: 10px;
+    /* первая колонка всегда будет иметь фиксированные 150px ширины, 
+    а вторая будет растягиваться в зависимости от разрешения экрана. */
+    grid-template-columns: 150px 1fr;
+    /* Аналогично, только растягиваться колонки будут вниз, в завиимости от количества контента.  */
+    grid-template-rows: 50px 1fr;
+
+}
+/* Задал с начала шаблон, а потом использовал этот шаблон, обращаясь к колонкам по заданым наименованиями. */
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+    /* Чтобы элемент имел фиксированное поведение, регулировать его можно при помощи свойств:  */
+    align-self: start;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+
+.item {
+    padding: 10px;
+    border: 1px solid black;
+}
